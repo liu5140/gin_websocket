@@ -20,6 +20,11 @@ func WriteMessage(userid int64, data []byte) (err error) {
 	return nil
 }
 
-如何保证read,write的线程安全，增加了两个chan chan是线程安全，所以我们重写read和write也是线程安全的
-题外话：如果有人问你golang一分钟处理十万，或者百万访问量，这个时候人家想听到的，应该是你使用go的chan 一边往chan里面写东西，一边从chan里面读取东西，做你接下来的业务
+如何保证read,write的线程安全
+
+增加了两个chan chan是线程安全，所以我们重写read和write也是线程安全的
+
+
+题外话：如果有人问你golang一分钟处理十万，或者百万访问量，这个时候人家想听到的，应该是你使用go的chan 一边往chan里面写东西，一边从chan里面读取东西，
+做你接下来的业务
 
